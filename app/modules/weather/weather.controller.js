@@ -20,6 +20,10 @@ class WeatherController {
   search(city) {
     this.getWeatherData(city);
   }
+
+  getImage(icon) {
+    return `http://openweathermap.org/img/w/${icon}.png`
+  }
 }
 
 export default WeatherController;

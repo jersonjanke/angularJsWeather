@@ -5,7 +5,7 @@
         <form>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-9">
                 <label for="exampleFormControlSelect1">City</label>
                 <select class="form-control" ng-model="vm.city" id="exampleFormControlSelect1">
                   <option>Blumanu</option>
@@ -14,7 +14,7 @@
                   <option>Ascurra</option>              
                 </select>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <button ng-click="vm.search(vm.city)" class="btn btn-primary margin-top-30">Search</button>
               </div>
             </div>
@@ -24,12 +24,24 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div ng-repeat="item in vm.model.list">
-            <div>{{item.dt_txt}}</div>
-            <div>Temp: {{item.main.temp}}</div>
-            <div>Min: {{item.main.temp_min}}</div>
-            <div>Max: {{item.main.temp_max}}</div>
-            <hr>
+        <div class="row">
+          <div ng-repeat="item in vm.model.list">
+            <div class="col-md-12">
+              <div class="card margin-top-20" style="width: 220px;">
+                <div class="card-header">
+                  <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
+                  <span>{{item.weather[0].description}}</span>
+                </div>
+                <div class="card-block">
+                  <h4 class="card-title">Temp: {{item.main.temp}}°</h4>
+                  <p class="card-text">Max: {{item.main.temp_min}}°</p>
+                  <p class="card-text">Min: {{item.main.temp_max}}°</p>
+                  <p class="card-text">Icon: {{item.weather[0].icon}}</p>
+                  <p class="card-text">{{item.dt_txt}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
