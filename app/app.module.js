@@ -3,6 +3,7 @@ import uirouter from 'angular-ui-router';
 import example from './example/example.module';
 import ngAnimate from 'angular-animate';
 import toastr from 'angular-toastr';
+import performance from './modules/performance/config/module';
 
 require('./assets/main.scss');
 
@@ -11,5 +12,6 @@ angular.module('app', [
   'example',
   'moment-picker',
   ngAnimate,
-  toastr
+  toastr,
+  performance.name
 ]);
