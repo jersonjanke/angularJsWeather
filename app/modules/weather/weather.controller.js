@@ -4,18 +4,21 @@ class WeatherController {
   constructor($stateParams, toastr, weatherService) {
     this.weatherService = weatherService;
     this.$stateParams = $stateParams;
-    this.toastr = toastr;
-    this.getCompetenceTypes();
+    this.toastr = toastr;    
   }
 
   /**
-   * Retorna lista com todas competências
+   * Return weather data
    * @return {*}
    */
-  getCompetenceTypes() {
-    return this.weatherService.getAllTypeCompetence().then(response => {
+  getWeatherData(city) {
+    return this.weatherService.getWeatherData(city).then(response => {
       this.model = response;
     });
+  }
+
+  search(city) {
+    this.getWeatherData(city);
   }
 }
 
