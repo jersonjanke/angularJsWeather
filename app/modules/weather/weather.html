@@ -5,7 +5,7 @@
         <form>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-8">                
+              <div class="col-md-8">
                 <label for="exampleFormControlSelect1">City</label>
                 <select class="form-control" ng-model="vm.city" id="exampleFormControlSelect1">
                   <option>Blumanu</option>
@@ -13,19 +13,26 @@
                   <option>Indaial</option>
                   <option>Ascurra</option>              
                 </select>
-            </div>
-            <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
                 <button ng-click="vm.search(vm.city)" class="btn btn-primary margin-top-30">Search</button>
+              </div>
             </div>
-          </div>
           </div>
         </form>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <pre>{{vm.model}}</pre>
+        <div ng-repeat="item in vm.model.list">
+            <div>{{item.dt_txt}}</div>
+            <div>Temp: {{item.main.temp}}</div>
+            <div>Min: {{item.main.temp_min}}</div>
+            <div>Max: {{item.main.temp_max}}</div>
+            <hr>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
