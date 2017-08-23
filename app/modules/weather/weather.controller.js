@@ -5,15 +5,18 @@ class WeatherController {
     this.weatherService = weatherService;
     this.$stateParams = $stateParams;
     this.toastr = toastr;    
+    this.loading = false;
   }
 
   /**
    * Return weather data
    * @return {*}
    */
-  getWeatherData(city) {
+  getWeatherData(city) {    
+    this.loading = true;
     return this.weatherService.getWeatherData(city).then(response => {
       this.model = response;
+      this.loading = false;
     });
   }
 
@@ -23,6 +26,14 @@ class WeatherController {
 
   getImage(icon) {
     return `http://openweathermap.org/img/w/${icon}.png`
+  }
+
+  getConvertDate(date) {
+    return moment.unix(date).format('DD/MM/YYYY');
+  }
+
+  getNameWeek(date) {
+    return moment.unix(date).format('dddd');
   }
 }
 
