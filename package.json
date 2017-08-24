@@ -19,14 +19,11 @@
   "dependencies": {
     "angular": "^1.5.3",
     "angular-animate": "^1.6.4",
-    "angular-moment": "^1.0.1",
     "angular-moment-picker": "^0.9.10",
     "angular-toastr": "^2.1.1",
-    "angular-ui-router": "1.0.0-beta.1",
-    "moment": "^2.18.1"
+    "angular-ui-router": "1.0.0-beta.1"
   },
   "devDependencies": {
-    "angular-lte": "^1.8.3",
     "autoprefixer": "^6.0.1",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.1.2",

@@ -3,10 +3,9 @@ import exampleHtml from './example.html';
 let exampleComponent = {
   template: exampleHtml,
   controllerAs: 'vm',
-  controller: function(exampleService, toastr) {    
+  controller: function(exampleService) {    
     const vm = this;
     vm.title = exampleService.title();   
-    toastr.success('Hello world!', 'Toastr fun!'); 
   }
 
 }
