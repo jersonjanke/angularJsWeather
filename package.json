@@ -22,6 +22,8 @@
     "angular-moment-picker": "^0.9.10",
     "angular-toastr": "^2.1.1",
     "angular-ui-router": "1.0.0-beta.1",
+    "express": "^4.15.4",
+    "lodash": "^4.17.4",
     "moment": "^2.18.1"
   },
   "devDependencies": {
