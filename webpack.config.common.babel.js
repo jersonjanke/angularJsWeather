@@ -48,10 +48,7 @@ module.exports = new WebpackConfig().merge({
       template: 'index.ejs',
       inject: 'body'
     }),
-    new CopyWebpackPlugin([
-      {from: 'offline.html', to: 'offline.html'},
-      {from: 'service-worker.js', to: 'service-worker.js'},
-      {from: 'manifest.json', to: 'manifest.json'},
+    new CopyWebpackPlugin([                  
       {from: 'assets/css', to: 'assets/css'},
       {from: 'assets/js', to: 'assets/js'},
       {from: 'assets/fonts', to: 'assets/fonts'}
