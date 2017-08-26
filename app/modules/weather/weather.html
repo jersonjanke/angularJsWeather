@@ -5,7 +5,7 @@
         <form>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-lg-4 col-sm-12">
                 <label for="exampleFormControlSelect1">Country</label>
                 <ui-select ng-model="vm.countrySelected" class="margin-top-5" on-select="vm.getCitysByCountry(vm.countrySelected)">
                   <ui-select-match placeholder="Choose an country">{{vm.countrySelected.nome}}</ui-select-match>
@@ -14,7 +14,7 @@
                   </ui-select-choices>
                 </ui-select>
               </div>
-              <div class="col-md-6">
+              <div class="col-lg-7 col-sm-12">
                 <label for="exampleFormControlSelect1">City</label>
                 <ui-select ng-model="vm.citySelected" class="margin-top-5">
                   <ui-select-match placeholder="Choose an city">{{vm.citySelected}}</ui-select-match>
@@ -23,7 +23,7 @@
                   </ui-select-choices>
                 </ui-select>
               </div>
-              <div class="col-md-3">
+              <div class="col-lg-1 col-sm-12">
                 <button ng-click="vm.search(vm.citySelected)" class="btn btn-primary margin-top-30">
                   Search
                   <span ng-if="vm.loading">
@@ -34,24 +34,32 @@
             </div>
           </div>
         </form>
+      </div>      
+      <div class="col-lg-12" ng-if="!vm.model.list.length != 0">
+        <div class="alert alert-success" role="alert">Select one country and city for search.</div>
       </div>
     </div>
+
     <div ng-if="!vm.loading" class="row">
       <div class="col-md-12">
         <div class="row">
           <div ng-repeat="item in vm.model.list">
             <div class="col-md-3">
-              <div class="card margin-top-20" style="width: 240px;">
-                <div class="card-header">
-                  <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
-                  <span>{{item.weather[0].description}}</span>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div>
+                      <span class="bold">{{vm.getNameWeek(item.dt)}} - <span>
+                      <span>{{vm.getConvertDate(item.dt)}}</span>
+                  </div>                                                      
                 </div>
-                <div class="card-block">
+                <div class="panel-body">
+                  <div class="bg-gray">
+                      <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
+                      <span>{{item.weather[0].description}}</span>
+                  </div>
                   <h4 class="card-title">Temp: {{item.temp.day}}°</h4>
                   <p class="card-text">Max: {{item.temp.min}}°</p>
-                  <p class="card-text">Min: {{item.temp.max}}°</p>
-                  <p class="card-text">Date: {{vm.getConvertDate(item.dt)}}</p>
-                  <p>{{vm.getNameWeek(item.dt)}}</p>
+                  <p class="card-text">Min: {{item.temp.max}}°</p>                  
                 </div>
               </div>
             </div>
