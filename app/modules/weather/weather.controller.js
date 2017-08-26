@@ -1,12 +1,15 @@
+import {getCitys} from '../../data/City';
+
 class WeatherController {
   /*@ngInject*/
 
-  constructor($stateParams, toastr, weatherService) {
+  constructor($stateParams, toastr, weatherService, $filter) {
+    this.$filter = $filter;
     this.weatherService = weatherService;
     this.$stateParams = $stateParams;
     this.toastr = toastr;    
-    this.loading = false;    
-    this.getCity('Blumenau');
+    this.loading = false;     
+    this.country = getCitys().estados;    
   }
 
   /**
@@ -18,12 +21,6 @@ class WeatherController {
     return this.weatherService.getWeatherData(city).then(response => {
       this.model = response;
       this.loading = false;
-    });
-  }
-
-  getCity(search) {
-    return this.weatherService.getCity(search).then(response => {
-      console.log(response);
     });
   }
 
@@ -49,6 +46,14 @@ class WeatherController {
 
   getNameWeek(date) {
     return moment.unix(date).format('dddd');
+  }
+
+  getCitysByCountry(country) {  
+    this.city = this.$filter('filter')(this.country, function(val) {
+      if(val.sigla === country.sigla) {
+        return val;
+      }
+    });    
   }
 }
 

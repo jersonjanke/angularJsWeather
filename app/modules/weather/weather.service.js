@@ -1,4 +1,4 @@
-import {getCityUrl, getWeatherUrl} from '../../core/Api.js';
+import {getWeatherUrl} from '../../core/Api.js';
 
 class WeatherService {
 
@@ -24,20 +24,6 @@ class WeatherService {
 
     return future.promise;
   }  
-
-  getCity(search) {
-    let future = this.$q.defer();
-    this.$http.get(getCityUrl(search), {
-    }).then(response => {
-      future.resolve(response);
-    })
-    .catch(data => {
-      future.reject(data);
-    });
-
-    return future.promise;
-  }
-
 }
 
 export default WeatherService;
