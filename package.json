@@ -60,6 +60,7 @@
     "test-server": "http-server dist -p 9000 -a localhost",
     "start": "node server.js",
     "start-webpack": "webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
-    "build": "webpack --config webpack.config.prod.babel.js --progress"
+    "build": "webpack --config webpack.config.prod.babel.js --progress",
+    "heroku": "webpack --config webpack.config.prod.babel.js --progress && git add * && git commit --m 'Build Heroku' && git push heroku master"
   }
 }
