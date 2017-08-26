@@ -1,3 +1,5 @@
+import {getCityUrl, getWeatherUrl} from '../../core/Api.js';
+
 class WeatherService {
 
   constructor($http, $q) {
@@ -6,12 +8,12 @@ class WeatherService {
   }
 
   /**
-   * Retorna lista com todas competências
+   * Return data weather
    * @return {*}
    */  
   getWeatherData(city) {
     let future = this.$q.defer();
-    this.$http.get(`http://api.openweathermap.org/data/2.5/forecast/daily?appid=e6d7534de04ba7a32d815f09759af580&units=metric&cnt=8&lang=en&q=${city}`, {
+    this.$http.get(getWeatherUrl(city), {
     })
       .then(response => {
         future.resolve(response.data);
@@ -21,7 +23,21 @@ class WeatherService {
       });
 
     return future.promise;
+  }  
+
+  getCity(search) {
+    let future = this.$q.defer();
+    this.$http.get(getCityUrl(search), {
+    }).then(response => {
+      future.resolve(response);
+    })
+    .catch(data => {
+      future.reject(data);
+    });
+
+    return future.promise;
   }
+
 }
 
 export default WeatherService;

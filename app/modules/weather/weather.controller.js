@@ -5,7 +5,8 @@ class WeatherController {
     this.weatherService = weatherService;
     this.$stateParams = $stateParams;
     this.toastr = toastr;    
-    this.loading = false;
+    this.loading = false;    
+    this.getCity('Blumenau');
   }
 
   /**
@@ -20,14 +21,28 @@ class WeatherController {
     });
   }
 
+  getCity(search) {
+    return this.weatherService.getCity(search).then(response => {
+      console.log(response);
+    });
+  }
+
   search(city) {
     this.getWeatherData(city);
   }
 
+  /**
+   * Concat url and icon
+   * @param {*} icon 
+   */
   getImage(icon) {
     return `http://openweathermap.org/img/w/${icon}.png`
   }
 
+  /**
+   * Format date pt-br
+   * @param {*} date 
+   */
   getConvertDate(date) {
     return moment.unix(date).format('DD/MM/YYYY');
   }
