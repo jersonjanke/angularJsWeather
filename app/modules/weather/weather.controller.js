@@ -3,13 +3,14 @@ import {getCitys} from '../../data/City';
 class WeatherController {
   /*@ngInject*/
 
-  constructor($stateParams, toastr, weatherService, $filter) {
+  constructor($stateParams, toastr, weatherService, $filter, $translate) {        
+    this.$translate = $translate;
     this.$filter = $filter;
     this.weatherService = weatherService;
     this.$stateParams = $stateParams;
     this.toastr = toastr;    
     this.loading = false;     
-    this.country = getCitys().estados;    
+    this.country = getCitys().estados;        
   }
 
   /**
@@ -45,7 +46,7 @@ class WeatherController {
   }
 
   getNameWeek(date) {
-    return moment.unix(date).format('dddd');
+    return this.$filter('translate')(moment.unix(date).format('dddd'));
   }
 
   getCitysByCountry(country) {  
@@ -54,6 +55,10 @@ class WeatherController {
         return val;
       }
     });    
+  }
+
+  setTranslate(lag) {
+    this.$translate.use(lag);    
   }
 }
 

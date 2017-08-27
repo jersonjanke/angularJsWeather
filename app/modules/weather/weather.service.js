@@ -2,9 +2,10 @@ import {getWeatherUrl} from '../../core/Api.js';
 
 class WeatherService {
 
-  constructor($http, $q) {
+  constructor($http, $q, $translate) {
     this.$http = $http;
     this.$q = $q;
+    this.$translate = $translate;    
   }
 
   /**
@@ -13,7 +14,7 @@ class WeatherService {
    */  
   getWeatherData(city) {
     let future = this.$q.defer();
-    this.$http.get(getWeatherUrl(city), {
+    this.$http.get(getWeatherUrl(city, this.$translate.use()), {
     })
       .then(response => {
         future.resolve(response.data);

@@ -23,6 +23,7 @@
     "ui-select": "^0.18.0"
   },
   "devDependencies": {
+    "angular-translate": "^2.15.2",
     "autoprefixer": "^6.0.1",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.1.2",
@@ -60,7 +61,6 @@
     "test-server": "http-server dist -p 9000 -a localhost",
     "start": "node server.js",
     "start-webpack": "webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
-    "build": "webpack --config webpack.config.prod.babel.js --progress",
-    "heroku": "webpack --config webpack.config.prod.babel.js --progress && git add * && git commit --m 'Build Heroku' && git push heroku master"
+    "build": "webpack --config webpack.config.prod.babel.js --progress"
   }
 }
