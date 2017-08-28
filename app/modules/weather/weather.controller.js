@@ -1,64 +1,75 @@
+import angular from 'angular';
 import {getCitys} from '../../data/City';
 
-class WeatherController {
+function WeatherController($scope, $stateParams, toastr, weatherService, $filter, $translate) {
   /*@ngInject*/
+  var vm = this;
 
-  constructor($stateParams, toastr, weatherService, $filter, $translate) {        
-    this.$translate = $translate;
-    this.$filter = $filter;
-    this.weatherService = weatherService;
-    this.$stateParams = $stateParams;
-    this.toastr = toastr;    
-    this.loading = false;     
-    this.country = getCitys().estados;        
+  /**
+   * Methods
+   */
+  vm.getCitysByCountry = getCitysByCountry;
+  vm.search = search;
+  vm.getImage = getImage;
+  vm.getConvertDate = getConvertDate;
+  vm.getNameWeek = getNameWeek;
+  vm.setTranslate = setTranslate;
+
+  /**
+   * Constructor
+   */
+  constructor();
+
+  function constructor() {
+    vm.country = getCitys().estados;
   }
 
   /**
    * Return weather data
    * @return {*}
    */
-  getWeatherData(city) {    
-    this.loading = true;
-    return this.weatherService.getWeatherData(city).then(response => {
-      this.model = response;
-      this.loading = false;
+  function getWeatherData(city) {
+    vm.loading = true;
+    return weatherService.getWeatherData(city).then(response => {
+      vm.model = response;
+      vm.loading = false;
     });
   }
 
-  search(city) {
-    this.getWeatherData(city);
+  function search(city) {
+    getWeatherData(city);
   }
 
   /**
    * Concat url and icon
-   * @param {*} icon 
+   * @param {*} icon
    */
-  getImage(icon) {
+  function getImage(icon) {
     return `http://openweathermap.org/img/w/${icon}.png`
   }
 
   /**
    * Format date pt-br
-   * @param {*} date 
+   * @param {*} date
    */
-  getConvertDate(date) {
+  function getConvertDate(date) {
     return moment.unix(date).format('DD/MM/YYYY');
   }
 
-  getNameWeek(date) {
-    return this.$filter('translate')(moment.unix(date).format('dddd'));
+  function getNameWeek(date) {
+    return $filter('translate')(moment.unix(date).format('dddd'));
   }
 
-  getCitysByCountry(country) {  
-    this.city = this.$filter('filter')(this.country, function(val) {
-      if(val.sigla === country.sigla) {
+  function getCitysByCountry(country) {
+    vm.city = $filter('filter')(vm.country, function (val) {
+      if (val.sigla === country.sigla) {
         return val;
       }
-    });    
+    });
   }
 
-  setTranslate(lag) {
-    this.$translate.use(lag);    
+  function setTranslate(lang) {
+    $translate.use(lang);
   }
 }
 
