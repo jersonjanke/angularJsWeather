@@ -1,7 +1,7 @@
 import angular from 'angular';
 import {getCitys} from '../../data/City';
 
-function WeatherController($scope, $stateParams, toastr, weatherService, $filter, $translate) {
+function WeatherController($scope, $stateParams, toastr, weatherService, $filter) {
   /*@ngInject*/
   var vm = this;
 
@@ -13,7 +13,7 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
   vm.getImage = getImage;
   vm.getConvertDate = getConvertDate;
   vm.getNameWeek = getNameWeek;
-  vm.setTranslate = setTranslate;
+  
 
   /**
    * Constructor
@@ -68,9 +68,6 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
     });
   }
 
-  function setTranslate(lang) {
-    $translate.use(lang);
-  }
 }
 
 export default WeatherController;

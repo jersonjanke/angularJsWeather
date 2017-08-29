@@ -1,14 +1,6 @@
-<div class="row">
-  <div class="col-lg-12">
-    <div class="pull-right margin-10">
-      <button class="btn" ng-click="vm.setTranslate('pt')">Portugues</button>
-      <button class="btn" ng-click="vm.setTranslate('en')">English</button>
-    </div>
-  </div>  
-</div>
-
 <div class="margin-top-10">
   <div class="container">
+    <language-button></language-button>
     <div class="row">
       <div class="col-md-12">
         <form>
@@ -32,7 +24,7 @@
                   </ui-select-choices>
                 </ui-select>
               </div>
-              <div class="col-lg-2 col-sm-12">                
+              <div class="col-lg-2 col-sm-12">
                 <button ng-click="vm.search(vm.citySelected)" ng-disabled="!vm.citySelected" class="btn btn-primary margin-top-30">
                   {{'Search' | translate}}
                   <span ng-if="vm.loading">
@@ -43,7 +35,7 @@
             </div>
           </div>
         </form>
-      </div>      
+      </div>
       <div class="col-lg-12" ng-if="!vm.model.list.length != 0">
         <div class="alert alert-info" role="alert">{{'Select country and city for see weather.' | translate}}</div>
       </div>
@@ -57,17 +49,17 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <div>
-                      <span class="bold">{{vm.getNameWeek(item.dt)}} - <span>
+                    <span class="bold">{{vm.getNameWeek(item.dt)}} - <span>
                       <span>{{vm.getConvertDate(item.dt)}}</span>
-                  </div>                                                      
+                  </div>
                 </div>
-                <div class="panel-body">                  
+                <div class="panel-body">
                   <h4 class="card-title">Temp: {{item.temp.day}}°</h4>
                   <p class="card-text">Max: {{item.temp.min}}°</p>
-                  <p class="card-text">Min: {{item.temp.max}}°</p>                  
+                  <p class="card-text">Min: {{item.temp.max}}°</p>
                   <div class="bg-gray">
-                      <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
-                      <span>{{item.weather[0].description}}</span>
+                    <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
+                    <span>{{item.weather[0].description}}</span>
                   </div>
                 </div>
               </div>

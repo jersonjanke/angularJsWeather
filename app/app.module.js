@@ -1,22 +1,24 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-import ngAnimate from 'angular-animate';
+import animate from 'angular-animate';
 import toastr from 'angular-toastr';
 import weather from './modules/config/module';
 import sanitize from 'angular-sanitize';
 import select from 'ui-select';
 import translate from 'angular-translate';
+import directives from './components/language/module';
 
 require('./assets/main.scss');
 
 var app = angular.module('app', [
+  'moment-picker',
   uirouter,  
   sanitize,
-  select,
-  'moment-picker',
-  ngAnimate,
+  select,  
+  animate,
   toastr,
   weather.name,
+  directives.name,
   translate
 ]);
 
