@@ -1,25 +1,17 @@
 import angular from 'angular';
-import uirouter from 'angular-ui-router';
-import animate from 'angular-animate';
-import toastr from 'angular-toastr';
 import weather from './modules/config/module';
-import sanitize from 'angular-sanitize';
-import select from 'ui-select';
-import translate from 'angular-translate';
-import directives from './components/language/module';
+import components from './components/language/component';
+import header from './components/header/component';
+import card from './components/card-weather/component';
+import core from './core/module';
+import scss from './assets/main.scss';
 
-require('./assets/main.scss');
-
-var app = angular.module('app', [
-  'moment-picker',
-  uirouter,  
-  sanitize,
-  select,  
-  animate,
-  toastr,
-  weather.name,
-  directives.name,
-  translate
+var app = angular.module('app', [ 
+  core.name,
+  components.name,
+  header.name,
+  weather.name,  
+  card.name
 ]);
 
 app.controller('appController', ['$scope', '$state', function($scope, $state) {

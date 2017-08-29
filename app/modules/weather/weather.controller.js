@@ -13,7 +13,6 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
   vm.getImage = getImage;
   vm.getConvertDate = getConvertDate;
   vm.getNameWeek = getNameWeek;
-  
 
   /**
    * Constructor

@@ -1,6 +1,5 @@
 <div class="margin-top-10">
   <div class="container">
-    <language-button></language-button>
     <div class="row">
       <div class="col-md-12">
         <form>
@@ -26,10 +25,10 @@
               </div>
               <div class="col-lg-2 col-sm-12">
                 <button ng-click="vm.search(vm.citySelected)" ng-disabled="!vm.citySelected" class="btn btn-primary margin-top-30">
-                  {{'Search' | translate}}
-                  <span ng-if="vm.loading">
-                    <i class="fa fa-spinner fa-spin"></i>
-                  </span>
+                    <span ng-if="vm.loading">
+                        <i class="fa fa-spinner fa-spin"></i>
+                      </span>
+                  {{'Search' | translate}}                  
                 </button>
               </div>
             </div>
@@ -40,11 +39,10 @@
         <div class="alert alert-info" role="alert">{{'Select country and city for see weather.' | translate}}</div>
       </div>
     </div>
-
     <div ng-if="!vm.loading" class="row">
       <div class="col-md-12">
         <div class="row">
-          <div ng-repeat="item in vm.model.list">
+          <div ng-repeat="item in vm.model.list">            
             <div class="col-md-3">
               <div class="panel panel-default">
                 <div class="panel-heading">
