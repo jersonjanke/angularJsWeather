@@ -10,10 +10,7 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
    */
   vm.getCitysByCountry = getCitysByCountry;
   vm.search = search;
-  vm.getImage = getImage;
-  vm.getConvertDate = getConvertDate;
-  vm.getNameWeek = getNameWeek;
-
+  
   /**
    * Constructor
    */
@@ -37,26 +34,6 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
 
   function search(city) {
     getWeatherData(city);
-  }
-
-  /**
-   * Concat url and icon
-   * @param {*} icon
-   */
-  function getImage(icon) {
-    return `http://openweathermap.org/img/w/${icon}.png`
-  }
-
-  /**
-   * Format date pt-br
-   * @param {*} date
-   */
-  function getConvertDate(date) {
-    return moment.unix(date).format('DD/MM/YYYY');
-  }
-
-  function getNameWeek(date) {
-    return $filter('translate')(moment.unix(date).format('dddd'));
   }
 
   function getCitysByCountry(country) {

@@ -1,1 +1,19 @@
-<h1>Card</h1>
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                <span class="bold">{{vm.getNameWeek(vm.data.dt)}} - <span>
+                <span>{{vm.getConvertDate(vm.data.dt)}}</span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <h4 class="card-title">Temp: {{vm.data.temp.day}}°</h4>
+            <p class="card-text">Max: {{vm.data.temp.min}}°</p>
+            <p class="card-text">Min: {{vm.data.temp.max}}°</p>
+            <div class="bg-gray">
+                <img ng-src="{{vm.getImage(vm.data.weather[0].icon)}}">
+                <span>{{vm.data.weather[0].description}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,9 +6,9 @@
           <div class="form-group">
             <div class="row">
               <div class="col-lg-4 col-sm-12">
-                <label for="exampleFormControlSelect1">{{'Country' | translate}}</label>
+                <label for="exampleFormControlSelect1">{{'State' | translate}}</label>
                 <ui-select ng-model="vm.countrySelected" class="margin-top-5" on-select="vm.getCitysByCountry(vm.countrySelected)">
-                  <ui-select-match placeholder="{{'Choose country' | translate}}">{{vm.countrySelected.nome}}</ui-select-match>
+                  <ui-select-match placeholder="{{'Choose state' | translate}}">{{vm.countrySelected.nome}}</ui-select-match>
                   <ui-select-choices repeat="country in vm.country | filter: $select.search">
                     <div ng-bind-html="country.nome | highlight: $select.search"></div>
                   </ui-select-choices>
@@ -36,32 +36,14 @@
         </form>
       </div>
       <div class="col-lg-12" ng-if="!vm.model.list.length != 0">
-        <div class="alert alert-info" role="alert">{{'Select country and city for see weather.' | translate}}</div>
+        <div class="alert alert-info" role="alert">{{'Select state and city to see the weather.' | translate}}</div>
       </div>
     </div>
     <div ng-if="!vm.loading" class="row">
       <div class="col-md-12">
         <div class="row">
-          <div ng-repeat="item in vm.model.list">            
-            <div class="col-md-3">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <div>
-                    <span class="bold">{{vm.getNameWeek(item.dt)}} - <span>
-                      <span>{{vm.getConvertDate(item.dt)}}</span>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <h4 class="card-title">Temp: {{item.temp.day}}°</h4>
-                  <p class="card-text">Max: {{item.temp.min}}°</p>
-                  <p class="card-text">Min: {{item.temp.max}}°</p>
-                  <div class="bg-gray">
-                    <img ng-src="{{vm.getImage(item.weather[0].icon)}}">
-                    <span>{{item.weather[0].description}}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div ng-repeat="item in vm.model.list">                      
+              <card-weather data="item"></card-weather>
           </div>
         </div>
       </div>
