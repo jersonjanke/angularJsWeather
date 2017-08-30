@@ -2,6 +2,7 @@ import angular from 'angular';
 import weather from './modules/config/module';
 import components from './components/language/component';
 import header from './components/header/component';
+import footer from './components/footer/component';
 import card from './components/card-weather/component';
 import core from './core/module';
 import scss from './assets/main.scss';
@@ -10,6 +11,7 @@ var app = angular.module('app', [
   core.name,
   components.name,
   header.name,
+  footer.name,
   weather.name,
   card.name
 ]);
