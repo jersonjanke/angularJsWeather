@@ -10,7 +10,7 @@
             <h4 class="card-title">Temp: {{vm.data.temp.day}}°</h4>
             <p class="card-text">Max: {{vm.data.temp.min}}°</p>
             <p class="card-text">Min: {{vm.data.temp.max}}°</p>
-            <div class="bg-gray">
+            <div>
                 <img ng-src="{{vm.getImage(vm.data.weather[0].icon)}}">
                 <span>{{vm.data.weather[0].description}}</span>
             </div>
