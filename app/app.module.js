@@ -11,7 +11,7 @@ var app = angular.module('app', [
   components.name,
   header.name,
   weather.name,  
-  card.name
+  card.name  
 ]);
 
 app.controller('appController', ['$scope', '$state', function($scope, $state) {
@@ -23,7 +23,10 @@ app.config(['$translateProvider', function ($translateProvider) {
     'Search': 'Search',
     'City': 'City',
     'State': 'State',
+    'Temperature' : 'Temperature',
     'Select state and city to see the weather.' : 'Select state and city to see the weather.',
+    'Week temperature chart' : 'Week temperature chart',
+    'Week Temperature' : 'Week Temperature',
     'Choose state': 'Choose state',
     'Choose city': 'Choose city',
     'Sunday' : 'Sunday',
@@ -39,7 +42,10 @@ app.config(['$translateProvider', function ($translateProvider) {
     'Search' : 'Pesquisar',
     'City': 'Cidade',
     'State' : 'Estado',
+    'Temperature': 'Temperatura',
     'Select state and city to see the weather.' : 'Selecione estado e cidade para ver o tempo.',
+    'Week temperature chart' : 'Gráfico da temperatura',
+    'Week Temperature' : 'Temperatura da semana',
     'Choose state' : 'Escolha estado',
     'Choose city' : 'Escolha cidade',
     'Sunday' : 'Domingo',

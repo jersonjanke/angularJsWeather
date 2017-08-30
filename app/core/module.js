@@ -15,7 +15,7 @@ angular.module(exports.name, [
     select,  
     animate,
     toastr,
-    translate
+    translate    
 ]);
 
 export default exports;
