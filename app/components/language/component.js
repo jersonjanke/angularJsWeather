@@ -4,17 +4,12 @@ const exports = { name: 'language' };
 
 angular.module(exports.name, [])
     .component('languageButton', {
-        controller: function ($translate, $cookies) {
+        controller: function ($translate) {
             var vm = this;
-            vm.setTranslate = setTranslate;
-            
-            if($cookies.get('language')) {
-                $translate.use($cookies.get('language'));
-            }            
+            vm.setTranslate = setTranslate;            
 
             function setTranslate(lang) {
-                $translate.use(lang);
-                $cookies.put('language', lang);
+                $translate.use(lang);                
               }
         },
         controllerAs: 'vm',
