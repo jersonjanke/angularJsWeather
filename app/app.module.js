@@ -56,6 +56,5 @@ app.config(['$translateProvider', function ($translateProvider) {
     'Friday' : 'Sexta',
     'Saturday' : 'Sábado'
   });
- 
-  $translateProvider.preferredLanguage('en');
+  
 }]);

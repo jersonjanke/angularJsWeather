@@ -2,10 +2,10 @@ import angular from 'angular';
 import { getCitys } from '../../data/City';
 import * as Highcharts from 'highcharts';
 
-function WeatherController($scope, $stateParams, toastr, weatherService, $filter, $timeout) {
+function WeatherController($scope, toastr, weatherService, $filter, $timeout) {
   /*@ngInject*/
   var vm = this;
-
+  
   /**
    * Methods
    */
@@ -17,7 +17,7 @@ function WeatherController($scope, $stateParams, toastr, weatherService, $filter
    */
   constructor();
 
-  function constructor() {
+  function constructor() {    
     vm.country = getCitys().estados;
   }
 

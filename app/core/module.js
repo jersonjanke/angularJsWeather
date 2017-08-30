@@ -5,6 +5,7 @@ import sanitize from 'angular-sanitize';
 import toastr from 'angular-toastr';
 import select from 'ui-select';
 import translate from 'angular-translate';
+import cookies from 'angular-cookies'
 
 const exports = {name: 'core'};
 
@@ -15,7 +16,8 @@ angular.module(exports.name, [
     select,  
     animate,
     toastr,
-    translate    
+    translate,
+    cookies
 ]);
 
 export default exports;
