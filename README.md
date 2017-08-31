@@ -51,9 +51,9 @@ npm install
 npm run build
 ```
 
-go to [http://localhost:3000](http://localhost:3000) in your browser
+[http://localhost:3000](http://localhost:3000) in your browser
 
 ## Heroku
 
-go to [http://angularjs-weather-form.herokuapp.com](http://angularjs-weather-form.herokuapp.com)
+[http://angularjs-weather-form.herokuapp.com](http://angularjs-weather-form.herokuapp.com)
 
