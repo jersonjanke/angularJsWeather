@@ -1,15 +1,4 @@
-
-[![NPM version](https://badge.fury.io/js/angular-es6-webpack-starter.svg)](http://badge.fury.io/js/angular-es6-webpack-starter)
-[![GitHub version](https://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter.svg)](http://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter)
-[![Build Status](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter.svg?branch=master)](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter)
-[![Dependency Status](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter.svg)](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter)
-[![devDependency Status](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter/dev-status.svg)](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter#info=devDependencies)
-
-[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/KarlDoyle/angular-1-starter-kit)
-
-![Angular, ES6 and Webpack Starter](http://i.imgur.com/U6ueigg.jpg)
-
-angular-es6-webpack-starter
+AngularJs Weather
 =============================
 
 An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Protractor and multi environments.
@@ -30,20 +19,39 @@ This seed repo serves as an Angular 1 starter for anyone looking to get up and r
 Make sure you have Node version >= 6.0 and NPM >= 3
 
 ```
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/KarlDoyle/angular-es6-webpack-starter.git
+# clone
+git clone --depth 1 https://github.com/jersonjanke/angularJsWeather.git
 
 # change directory to repo
-cd angular-es6-webpack-starter
+cd angularJsWeather
 
 # install the repo with npm
 npm install
 
 # start the server
-npm start
+npm run start-webpack
 
 ```
 
-go to [http://0.0.0.0:9000](http://0.0.0.0:9000) or [http://localhost:9000](http://localhost:9000) in your browser
+go to [http://localhost:9000](http://localhost:9000) in your browser
+
+##### Or
+
+# clone
+git clone --depth 1 https://github.com/jersonjanke/angularJsWeather.git
+
+# change directory to repo
+cd angularJsWeather
+
+# install the repo with npm
+npm install
+
+# build
+npm run build
+
+go to [http://localhost:9000](http://localhost:3000) in your browser
+
+##### Heroku
+
+go to [http://angularjs-weather-form.herokuapp.com](http://angularjs-weather-form.herokuapp.com)
 
