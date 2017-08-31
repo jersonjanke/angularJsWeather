@@ -1,10 +1,13 @@
 import angular from 'angular';
 import { getCitys } from '../../data/City';
 import * as Highcharts from 'highcharts';
+import * as ip from 'ip';
+
 
 function WeatherController($scope, toastr, weatherService, $filter, $timeout) {
   /*@ngInject*/
   var vm = this;
+  console.log(ip.address());
   
   /**
    * Methods

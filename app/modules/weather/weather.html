@@ -1,44 +1,43 @@
-<div class="margin-top-">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <form>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-lg-4 col-sm-12">
-                <label for="exampleFormControlSelect1">{{'State' | translate}}</label>
-                <ui-select ng-model="vm.countrySelected" class="margin-top-5" on-select="vm.getCitysByCountry(vm.countrySelected)">
-                  <ui-select-match placeholder="{{'Choose state' | translate}}">{{vm.countrySelected.nome}}</ui-select-match>
-                  <ui-select-choices repeat="country in vm.country | filter: $select.search">
-                    <div ng-bind-html="country.nome | highlight: $select.search"></div>
-                  </ui-select-choices>
-                </ui-select>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <label for="exampleFormControlSelect1">{{'City' | translate}}</label>
-                <ui-select ng-model="vm.citySelected" class="margin-top-5">
-                  <ui-select-match placeholder="{{'Choose city' | translate}}">{{vm.citySelected}}</ui-select-match>
-                  <ui-select-choices repeat="city in vm.city[0].cidades | filter: $select.search">
-                    <div ng-bind-html="city | highlight: $select.search"></div>
-                  </ui-select-choices>
-                </ui-select>
-              </div>
-              <div class="col-lg-2 col-sm-12">
-                <button ng-click="vm.search(vm.citySelected)" ng-disabled="!vm.citySelected" class="btn btn-primary margin-top-30">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <label for="exampleFormControlSelect1">{{'State' | translate}}</label>
+              <ui-select ng-model="vm.countrySelected" class="margin-top-5" on-select="vm.getCitysByCountry(vm.countrySelected)">
+                <ui-select-match placeholder="{{'Choose state' | translate}}">{{vm.countrySelected.nome}}</ui-select-match>
+                <ui-select-choices repeat="country in vm.country | filter: $select.search">
+                  <div ng-bind-html="country.nome | highlight: $select.search"></div>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <label for="exampleFormControlSelect1">{{'City' | translate}}</label>
+              <ui-select ng-model="vm.citySelected" class="margin-top-5">
+                <ui-select-match placeholder="{{'Choose city' | translate}}">{{vm.citySelected}}</ui-select-match>
+                <ui-select-choices repeat="city in vm.city[0].cidades | filter: $select.search">
+                  <div ng-bind-html="city | highlight: $select.search"></div>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+            <div class="col-lg-2 col-sm-12">
+              <button ng-click="vm.search(vm.citySelected)" ng-disabled="!vm.citySelected" class="btn btn-primary margin-top-30">
                     <span ng-if="vm.loading">
                         <i class="fa fa-spinner fa-spin"></i>
                       </span>
                   {{'Search' | translate}}                  
                 </button>
-              </div>
             </div>
           </div>
-        </form>
-      </div>
-      <div class="col-lg-12" ng-if="!vm.model.list.length != 0">
-        <div class="alert alert-info" role="alert">{{'Select state and city to see the weather.' | translate}}</div>
-      </div>
+        </div>
+      </form>
+      <div class="col-lg-12 no-padding" ng-if="!vm.model.list.length != 0">
+          <div class="alert alert-info" role="alert">{{'Select state and city to see the weather.' | translate}}</div>
+        </div>
     </div>
+
     <div class="row" ng-if="!vm.loading && vm.model.list">
       <div class="col-md-12">
         <div class="row">
