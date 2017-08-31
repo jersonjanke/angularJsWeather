@@ -1,18 +1,14 @@
 AngularJs Weather
 =============================
 
-An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Protractor and multi environments.
+An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR.
 
-This seed repo serves as an Angular 1 starter for anyone looking to get up and running with Angular 1 and ES6 fast. Using Webpack for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end tests.
+This seed repo serves as an Angular 1 starter for anyone looking to get up and running with Angular 1 and ES6 fast. Using Webpack for building our files and assisting with boilerplate.
 
 - Best practices in file and application organization for Angular 1.
 - Ready to go build system using Webpack for working with ES6.
-- Examples that are ready to go when experimenting with Angular 1 and Components.
-- A great Angular 1 seed repo for anyone who wants to start their project.
-- End-to-end Angular 1 code using Protractor.
 - Hot Module Replacement with Webpack
 - Multi Environment configuration with Webpack
-- Linting uses ESlint to provide best practices for Angular 1 and ES6
 
 ##### Quick start
 
