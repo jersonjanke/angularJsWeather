@@ -37,6 +37,7 @@ go to [http://localhost:9000](http://localhost:9000) in your browser
 
 ##### Or
 
+```
 # clone
 git clone --depth 1 https://github.com/jersonjanke/angularJsWeather.git
 
@@ -48,6 +49,7 @@ npm install
 
 # build
 npm run build
+```
 
 go to [http://localhost:9000](http://localhost:3000) in your browser
 
